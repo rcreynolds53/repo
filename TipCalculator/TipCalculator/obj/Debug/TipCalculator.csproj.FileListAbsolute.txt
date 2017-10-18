@@ -1,0 +1,209 @@
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/csc.exe
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/csc.exe.config
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/csc.rsp
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/csi.exe
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/csi.exe.config
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/csi.rsp
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CSharp.Core.targets
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.VisualBasic.Core.targets
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/Microsoft.Win32.Primitives.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.AppContext.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Collections.Immutable.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Console.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Diagnostics.Process.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Diagnostics.StackTrace.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.IO.Compression.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.IO.FileSystem.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.IO.FileSystem.DriveInfo.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.IO.FileSystem.Primitives.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.IO.Pipes.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Reflection.Metadata.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.AccessControl.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.Claims.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.Algorithms.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.Encoding.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.Primitives.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.X509Certificates.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Security.Principal.Windows.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Text.Encoding.CodePages.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Threading.Thread.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.ValueTuple.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Xml.ReaderWriter.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Xml.XmlDocument.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Xml.XPath.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/System.Xml.XPath.XDocument.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/vbc.exe
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/vbc.exe.config
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/vbc.rsp
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/VBCSCompiler.exe
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/roslyn/VBCSCompiler.exe.config
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/TipCalculator.dll.config
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/TipCalculator.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/TipCalculator.pdb
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/Microsoft.Web.Infrastructure.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Helpers.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Mvc.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Razor.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Webpages.Deployment.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Webpages.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Webpages.Razor.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Razor.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Webpages.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Webpages.Deployment.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Webpages.Razor.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Helpers.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/bin/System.Web.Mvc.xml
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/obj/Debug/TipCalculator.csprojResolveAssemblyReference.cache
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/obj/Debug/TipCalculator.csproj.CoreCompileInputs.cache
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/obj/Debug/TipCalculator.dll
+//Mac/Home/Documents/Project/repos/ASP.NET Lessons/TipCalculator/TipCalculator/obj/Debug/TipCalculator.pdb
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/csc.exe
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/csc.exe.config
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/csc.rsp
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/csi.exe
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/csi.exe.config
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/csi.rsp
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.CSharp.Core.targets
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.VisualBasic.Core.targets
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/Microsoft.Win32.Primitives.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.AppContext.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Collections.Immutable.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Console.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Diagnostics.Process.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Diagnostics.StackTrace.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.IO.Compression.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.IO.FileSystem.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.IO.FileSystem.DriveInfo.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.IO.FileSystem.Primitives.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.IO.Pipes.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Reflection.Metadata.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.AccessControl.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.Claims.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.Algorithms.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.Encoding.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.Primitives.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.Cryptography.X509Certificates.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Security.Principal.Windows.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Text.Encoding.CodePages.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Threading.Thread.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.ValueTuple.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Xml.ReaderWriter.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Xml.XmlDocument.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Xml.XPath.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/System.Xml.XPath.XDocument.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/vbc.exe
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/vbc.exe.config
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/vbc.rsp
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/VBCSCompiler.exe
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/roslyn/VBCSCompiler.exe.config
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/TipCalculator.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/TipCalculator.pdb
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/Microsoft.Web.Infrastructure.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Helpers.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Mvc.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Razor.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Webpages.Deployment.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Webpages.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Webpages.Razor.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Razor.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Webpages.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Webpages.Deployment.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Webpages.Razor.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Helpers.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/bin/System.Web.Mvc.xml
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/obj/Debug/TipCalculator.csprojResolveAssemblyReference.cache
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/obj/Debug/TipCalculator.csproj.CoreCompileInputs.cache
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/obj/Debug/TipCalculator.dll
+/Users/macbookpro/Documents/SG-Bootcamp/dotnet-rob-reynolds/TipCalculator/TipCalculator/obj/Debug/TipCalculator.pdb
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\csc.exe
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\csc.exe.config
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\csc.rsp
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\csi.exe
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\csi.exe.config
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\csi.rsp
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.CodeAnalysis.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.CSharp.Core.targets
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.VisualBasic.Core.targets
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\Microsoft.Win32.Primitives.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.AppContext.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Collections.Immutable.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Console.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Diagnostics.Process.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Diagnostics.StackTrace.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.IO.Compression.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.IO.FileSystem.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.IO.FileSystem.Primitives.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.IO.Pipes.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Reflection.Metadata.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.AccessControl.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.Claims.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.Cryptography.Encoding.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.Cryptography.Primitives.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Security.Principal.Windows.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Text.Encoding.CodePages.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Threading.Thread.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.ValueTuple.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Xml.ReaderWriter.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Xml.XmlDocument.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Xml.XPath.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\System.Xml.XPath.XDocument.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\vbc.exe
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\vbc.exe.config
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\vbc.rsp
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\VBCSCompiler.exe
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\roslyn\VBCSCompiler.exe.config
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\TipCalculator.dll.config
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\TipCalculator.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\TipCalculator.pdb
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\Microsoft.Web.Infrastructure.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Helpers.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Mvc.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Razor.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Webpages.Deployment.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Webpages.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Webpages.Razor.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Razor.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Webpages.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Webpages.Deployment.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Webpages.Razor.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Helpers.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\bin\System.Web.Mvc.xml
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\obj\Debug\TipCalculator.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\obj\Debug\TipCalculator.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\obj\Debug\TipCalculator.dll
+\\Mac\Home\Documents\SG-Bootcamp\dotnet-rob-reynolds\TipCalculator\TipCalculator\obj\Debug\TipCalculator.pdb
