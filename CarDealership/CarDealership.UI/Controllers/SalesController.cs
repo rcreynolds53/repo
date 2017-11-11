@@ -16,5 +16,18 @@ namespace CarDealership.UI.Controllers
            var vehicles = manager.GetAllVehicles();
             return View(vehicles);
         }
+        [HttpGet]
+        public ActionResult Makes()
+        {
+            var carMakes = manager.GetAllMakes();
+            return View(carMakes);
+        }
+
+        [HttpGet]
+        public ActionResult Models()
+        {
+            var carModels = manager.GetAllCarModels();
+            return View(carModels);
+        }
     }
 }

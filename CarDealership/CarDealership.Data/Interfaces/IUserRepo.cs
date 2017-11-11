@@ -13,5 +13,6 @@ namespace CarDealership.Data.Interfaces
         List<User> GetAllUsers();
         User GetUser(string id);
         void AddUser(User newUser);
+        void EditUser(User updatedUser);
     }
 }

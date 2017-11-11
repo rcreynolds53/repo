@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CarDealership.UI.Controllers
 {
-    [Authorize(Roles ="admin")]
+    //[Authorize(Roles ="admin")]
     public class AdminController : Controller
     {
         VehicleManager manager = VehicleManagerFactory.Create();
@@ -63,6 +63,12 @@ namespace CarDealership.UI.Controllers
         {
             manager.ConvertVehicleVmToVehicle(viewmodel);
             return RedirectToAction("Vehicles");
+        }
+
+        public ActionResult Users()
+        {
+            var model = manager.GetAllUsers();
+            return View(model);
         }
     }
 }

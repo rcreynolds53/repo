@@ -18,6 +18,11 @@ namespace CarDealership.Data.EFRepos
             context.SaveChanges();
         }
 
+        public void EditUser(User updatedUser)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<User> GetAllUsers()
         {
             var users = context.Users.ToList();

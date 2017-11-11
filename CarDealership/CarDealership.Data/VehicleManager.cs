@@ -99,7 +99,7 @@ namespace CarDealership.Data
         //{
         //    return _vehicleRepo.GetModelsByMake(makeId);
         //}
-        public IEnumerable<CarModel> GetModels()
+        public IEnumerable<CarModel> GetAllCarModels()
         {
             return _vehicleRepo.GetAllCarModels();
         }
@@ -117,6 +117,20 @@ namespace CarDealership.Data
         public List<Vehicle> GetAllNewVehicles()
         {
             return _vehicleRepo.GetAllNewVehicles();
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return _userRepo.GetAllUsers();
+        }
+        public void AddUser(User newUser)
+        {
+            _userRepo.AddUser(newUser);
+        }
+
+        public void EditUser(User updatedUser)
+        {
+            _userRepo.EditUser(updatedUser);
         }
     }
 }

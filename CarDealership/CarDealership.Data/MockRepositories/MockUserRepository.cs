@@ -31,5 +31,11 @@ namespace CarDealership.Data
         {
             return _users.FirstOrDefault(u => u.Id == id);
         }
+
+        public void EditUser(User updatedUser)
+        {
+            _users.RemoveAll(u => u.Id == updatedUser.Id);
+            _users.Add(updatedUser);
+        }
     }
 }

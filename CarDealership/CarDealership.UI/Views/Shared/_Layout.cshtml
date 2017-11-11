@@ -20,11 +20,34 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                   @*//@if(User.IsInRole("admin"))*@
+                        
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("New Inventory", "NewVehicles", "Inventory")</li>
                     <li>@Html.ActionLink("Used Inventory", "UsedVehicles", "Inventory")</li>
                     <li>@Html.ActionLink("Specials", "Specials", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sales", "Index", "Sales")</li>
+                    <li>@Html.ActionLink("Admin", "Vehicles", "Admin")</li>
+                    <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
+                    
+                    @*else if (User.IsInRole("sales"))
+                    {
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("New Inventory", "NewVehicles", "Inventory")</li>
+                    <li>@Html.ActionLink("Used Inventory", "UsedVehicles", "Inventory")</li>
+                    <li>@Html.ActionLink("Specials", "Specials", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sales", "Index", "Sales")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("New Inventory", "NewVehicles", "Inventory")</li>
+                        <li>@Html.ActionLink("Used Inventory", "UsedVehicles", "Inventory")</li>
+                        <li>@Html.ActionLink("Specials", "Specials", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }*@
                 </ul>
             </div>
         </div>

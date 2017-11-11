@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
@@ -247,6 +248,10 @@
     <Content Include="Views\Shared\_SalesLayout.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Home\Specials.cshtml" />
+    <Content Include="Views\Sales\Makes.cshtml" />
+    <Content Include="Views\Sales\Models.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
