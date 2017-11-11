@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vehicles</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+</head>
+
+<body onload="getMakes(); getModels();">
+    <div class="container">
+        <div class=" row">
+            <h3>Vehicles</h3>
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <button class="btn btn-default btn-lg" type="button" id="createVehicleBtn">Create Vehicle</button>
+                </div>
+            </div>
+            <div class="col-sm-offset-1 col-xs-1">
+                <div class="form-group">
+                    <button class="btn btn-default btn-lg" type="button" id="search-button">Search</button>
+                </div>
+            </div>
+            <div class="dropdown col-xs-3">
+                <div class="col-xs-3">
+                    <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">Category Search
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">Action</a>
+                        </li>
+                        <li>
+                            <a href="#">Chick Flick</a>
+                        </li>
+                        <li>
+                            <a href="#">Comedy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <div class="form-group">
+                    <input type="text" class="input-lg form-control" id="search-by-term" placeholder="Search Term">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <ul class="list-group" id="errorMessages"></ul>
+        <div id="vehicleTableDiv" class="col-xs-12">
+            <table id="vehiclesTable" class="table table-striped table-bordered">
+                <tr>
+                    <th width="25%">Vin</th>
+                    <th width="25%">Make</th>
+                    <th width="25%">Model</th>
+                    <th width="25%"></th>
+                </tr>
+                <tbody id="contentRows">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container" id="addVehicleDiv" style="display: none">
+        <div class="row">
+            <h2>Create Vehicle</h2>
+            <form class="form-horizontal" role="form" id="add-movie-form">
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="vehicleMake" class="col-xs-10">Make</label>
+                            <select id="vehicleMake" class="col-xs-10 form-control" onchange="getModels();">
+                                <option>Choose a make</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleType" class="col-xs-10">Type</label>
+                            <select id="vehicleType" class="col-xs-10 form-control">
+                                <option value="New">New</option>
+                                <option value="Used">Used</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleYear" class="col-xs-10">Year</label>
+                            <input class="col-xs-10 form-control" id="vehicleYear" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleExColor" class="col-xs-10">Color</label>
+                            <select id="vehicleExColor" class="col-xs-10 form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleMileage" class="col-xs-10">Mileage</label>
+                            <input class="col-xs-10 form-control" id="vehicleMileage" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleMSRP" class="col-xs-10">MSRP</label>
+                            <input class="col-xs-10 form-control" id="vehicleMSRP" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-offset-1 col-xs-4">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="vehicleModel" class="col-xs-10">Model</label>
+                            <select id="vehicleModel" class="col-xs-10 form-control">
+                                <option>Choose a model</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleBody" class="col-xs-10">Body Style</label>
+                            <select id="vehicleBody" class="col-xs-10 form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleTransmission" class="col-xs-10">Transmission</label>
+                            <select id="vehicleTransmission" class="col-xs-10 form-control">
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleIntColor" class="col-xs-12">Interior Color</label>
+                            <select id="vehicleIntColor" class="col-xs-12 form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleVin" class="col-xs-12">VIN #</label>
+                            <input class="col-xs-12 form-control" id="vehicleVin" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicleSalePrice" class="col-xs-12">Sale Price</label>
+                            <input class="col-xs-12 form-control" id="vehicleSalePrice" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="vehicleDescription" class="col-xs-12">Description</label>
+                            <textarea rows="8" class="col-xs-12" id="vehicleDescription"></textarea>
+                        </div>
+                        <div class="col-xs-2">
+                            <input type="hidden" id="add-movie-id">
+                            <button id="add-movie-cancel-button" class="btn btn-danger" onclick="hideAddVehicleForm()">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" id="addVehicleBtn" class="btn btn-primary">
+                                Save Vehicle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row" id="editVehicleDiv">
+            <h2>Edit Vehicle</h2>
+            <form class="form-horizontal" role="form" id="edit-movie-form">
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="editVehicleMake" class="col-xs-10">Make</label>
+                            <select id="editVehicleMake" class="col-xs-10 form-control">
+                                <option>Choose a make</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleType" class="col-xs-10">Type</label>
+                            <select id="editVehicleType" class="col-xs-10 form-control">
+                                <option value="New">New</option>
+                                <option value="Used">Used</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleYear" class="col-xs-10">Year</label>
+                            <input class="col-xs-10 form-control" id="editVehicleYear" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleExColor" class="col-xs-10">Color</label>
+                            <select id="editVehicleExColor" class="col-xs-10 form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleMileage" class="col-xs-10">Mileage</label>
+                            <input class="col-xs-10 form-control" id="editVehicleMileage" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleMSRP" class="col-xs-10">MSRP</label>
+                            <input class="col-xs-10 form-control" id="editVehicleMSRP" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-offset-1 col-xs-4">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="editVehicleModel" class="col-xs-10">Model</label>
+                            <select id="editVehicleModel" class="col-xs-10 form-control">
+                                <option>Choose a model</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleBody" class="col-xs-10">Body Style</label>
+                            <select id="editVehicleBody" class="col-xs-10 form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleTransmission" class="col-xs-10">Transmission</label>
+                            <select id="editVehicleTransmission" class="col-xs-10 form-control">
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleIntColor" class="col-xs-12">Interior Color</label>
+                            <select id="editVehicleIntColor" class="col-xs-12 form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleVin" class="col-xs-12">VIN #</label>
+                            <input class="col-xs-12 form-control" id="editVehicleVin" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="editVehicleSalePrice" class="col-xs-12">Sale Price</label>
+                            <input class="col-xs-12 form-control" id="editVehicleSalePrice" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="editVehicleDescription" class="col-xs-12">Description</label>
+                            <textarea rows="8" class="col-xs-12" id="editVehicleDescription"></textarea>
+                        </div>
+                        <div class="col-xs-2">
+                            <input type="hidden" id="add-movie-id">
+                            <button id="edit-movie-cancel-button" class="btn btn-danger" onclick="hideEditVehicleForm()">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" id="editVehicleBtn" class="btn btn-primary">
+                                Save Vehicle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="container" id="editVehicleDiv" style="display: none">
+        <h2>Edit Vehicle</h2>
+        <form class="form-horizontal" role="form" id="edit-movie-form">
+            <input type="hidden" id="vehicleId" />
+            <div class="form-group">
+                <label for="editVehicleTitle" class="col-md-2 control-label">Title:</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="editVehicleTitle" placeholder="Title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-12 newVehicle">Content:</label>
+                <div class="col-xs-12">
+                    <input class="form-control" id="editVehicleContent" name="content" type="hidden" value="">
+                    <trix-editor input="editVehicleContent"></trix-editor>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-12 newVehicle">Tags</label>
+                <input name="tags" class="form-control col-xs-12" id="editTags" />
+            </div>
+            <div class="form-group">
+                <label class="col-xs-12 newVehicle">Categories</label>
+                <input name="tags" class="form-control col-xs-12" id="editCategories" />
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-2">
+                    <input type="hidden" id="edit-movie-id">
+                    <button type="button" id="edit-movie-cancel-button" class="btn btn-danger" onclick="hideEditVehicleForm()">
+                        Cancel Edit
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" id="editVehicleBtn" class="btn btn-primary">
+                        Update Vehicle
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div> -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/vehicles.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

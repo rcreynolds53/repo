@@ -1,0 +1,40 @@
+﻿@model List<CarDealership.Models.User>
+{
+    ViewBag.Title = "Users";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Users</h2>
+        @*@Html.ActionLink("Add Course", "AddCourse","Admin",null, new { @class = "btn btn-primary"})*@
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-striped" style="width: auto">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var user in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@user.LastName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.Email</td>
+                        <td>@user.RoleName</td>
+                        <td>@Html.ActionLink("Edit", "EditCourse", "Admin", new { userId = user.Id }, null)</td>
+                        <td>@Html.ActionLink("Delete", "DeleteCourse", "Admin", new { userId = user.Id }, null)</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+        @Html.ActionLink("Add Course", "AddCourse", "Admin", null, new { @class = "btn btn-primary" })
+    </div>
+</div>

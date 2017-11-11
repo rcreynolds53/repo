@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CarDealership.Models.Vehicle>
+@{
+    ViewBag.Title = "Vehicles";
+}
+<div class="col-xs-12">
+    <div class="row">
+        @foreach (var v in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">@v.Year @v.CarModel.CarMake.Manufacturer @v.CarModel.CarModelName</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-3">
+
+                    </div>
+                    <div class="col-xs-3">
+                        <p>Body Style: @v.BodyStyle.BodyStyleName</p>
+                        <p>Trans: @v.Transmission.TransmissionType</p>
+                        <p>Color: @v.ExteriorColor.ExteriorColorName</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>Interior Color: @v.InteriorColor.InteriorColorName</p>
+                        <p>Mileage: @v.Mileage</p>
+                        <p>VIN: @v.Vin</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>Sale Price : $@v.SalePrice</p>
+                        <p>MSRP: $@v.Msrp</p>
+                        @Html.ActionLink("Edit Vehicle", "EditVehicle", "Vehicle", new { id = v.VehicleId }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
