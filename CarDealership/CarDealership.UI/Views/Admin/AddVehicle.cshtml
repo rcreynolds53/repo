@@ -1,6 +1,7 @@
 ﻿@model CarDealership.Models.VehicleViewModel
 @{
     ViewBag.Title = "AddVehicle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>AddVehicle</h2>
@@ -94,7 +95,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Save Vehicle</button>
-                        @Html.ActionLink("Cancel", "Vehicles", "Vehicle", null, new { @class = "btn btn-danger"})
+                        @Html.ActionLink("Cancel", "Vehicles", "Admin", null, new { @class = "btn btn-danger"})
                     </div>
                 </div>
             </div>

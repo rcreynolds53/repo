@@ -17,5 +17,17 @@ namespace CarDealership.UI.Controllers
             var vehicle = manager.GetVehicle(id);
             return View(vehicle);
         }
+
+        public ActionResult NewVehicles()
+        {
+            var vehicles = manager.GetAllNewVehicles();
+            return View(vehicles);
+        }
+
+        public ActionResult UsedVehicles()
+        {
+            var vehicles = manager.GetAllUsedVehicles();
+            return View(vehicles);
+        }
     }
 }

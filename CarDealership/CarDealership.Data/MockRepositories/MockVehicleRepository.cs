@@ -254,5 +254,15 @@ namespace CarDealership.Data.Repositories
         {
             return _specials;
         }
+
+        public List<Vehicle> GetAllNewVehicles()
+        {
+            return _vehicles.Where(v => v.VehicleType.VehicleTypeId == 1).ToList();
+        }
+
+        public List<Vehicle> GetAllUsedVehicles()
+        {
+            return _vehicles.Where(v => v.VehicleType.VehicleTypeId == 2).ToList(); 
+        }
     }
 }

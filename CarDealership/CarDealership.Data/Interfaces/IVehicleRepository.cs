@@ -25,5 +25,7 @@ namespace CarDealership.Data.Interfaces
         IEnumerable<CarMake> GetAllCarMakes();
         List<Vehicle> GetFeaturedVehicles();
         List<Promo> GetAllSpecials();
+        List<Vehicle> GetAllNewVehicles();
+        List<Vehicle> GetAllUsedVehicles();
     }
 }

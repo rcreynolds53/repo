@@ -108,5 +108,15 @@ namespace CarDealership.Data
         {
            return _vehicleRepo.GetAllSpecials();
         }
+
+        public List<Vehicle> GetAllUsedVehicles()
+        {
+            return _vehicleRepo.GetAllUsedVehicles();
+        }
+
+        public List<Vehicle> GetAllNewVehicles()
+        {
+            return _vehicleRepo.GetAllNewVehicles();
+        }
     }
 }

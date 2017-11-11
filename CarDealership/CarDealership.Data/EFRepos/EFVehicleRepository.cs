@@ -113,5 +113,20 @@ namespace CarDealership.Data.EFRepos
         {
             throw new NotImplementedException();
         }
+
+        public List<Promo> GetAllSpecials()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vehicle> GetAllNewVehicles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vehicle> GetAllUsedVehicles()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
