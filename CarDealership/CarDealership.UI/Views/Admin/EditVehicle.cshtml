@@ -4,83 +4,60 @@
     ViewBag.Title = "EditVehicle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div class="container">
-    <div class="row">
-        <h2>Edit Vehicle</h2>
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(v=>v.Vehicle.VehicleId)
-            <div class="col-xs-4">
-                <div class="row">
-                    <div class="form-group">
-                        <label>Make</label>
-                        @Html.DropDownListFor(v => v.Vehicle.CarModel.CarMake.CarMakeId, Model.CarMakeItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(v => v.Vehicle.VehicleType.VehicleTypeId)
-                        @Html.DropDownListFor(v => v.Vehicle.VehicleType.VehicleTypeId, Model.VehicleTypeItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(v => v.Vehicle.Year)
-                        @Html.TextBoxFor(v => v.Vehicle.Year, new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(v => v.Vehicle.ExteriorColor)
-                        @Html.DropDownListFor(v => v.Vehicle.ExteriorColor.ExteriorColorId, Model.ExteriorColorItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(v => v.Vehicle.Mileage)
-                        @Html.TextBoxFor(v => v.Vehicle.Mileage, new { @type = "number", @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(v => v.Vehicle.Msrp)
-                        @Html.TextBoxFor(v => v.Vehicle.Msrp, new { @type = "number", @class = "form-control" })
+        <div class="row">
+            <h2>Edit Vehicle</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(v=>v.Vehicle.VehicleId)
+                <div class=" col-xs-4">
+                    @Html.Partial("VehicleFormPartialView")
+                </div>
+                <div class="col-xs-offset-1 col-xs-4">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Model</label>
+                            @Html.DropDownListFor(v => v.Vehicle.CarModel.CarModelId, Model.CarModelItems, "-Choose One-", new { @class = "form-control", @id = "carModelDropdown" })
+                        </div>
+                        <div class="form-group">
+                            <label>Body Style</label>
+                            @Html.DropDownListFor(v => v.Vehicle.BodyStyle.BodyStyleId, Model.BodyStyleItems, "-Choose One-", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Transmission</label>
+                            @Html.DropDownListFor(v => v.Vehicle.Transmission.TransmissionId, Model.TransmissionItems, "-Choose One-", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Interior Color</label>
+                            @Html.DropDownListFor(v => v.Vehicle.InteriorColor.InteriorColorId, Model.InteriorColorItems, "-Choose One-", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>VIN #</label>
+                            @Html.TextBoxFor(v => v.Vehicle.Vin, new { @class = "form-control" })
+                        </div>
+                        <div>
+                            <label>Sale Price</label>
+                            @Html.TextBoxFor(v => v.Vehicle.SalePrice, new { @type = "number", @class = "form-control" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-offset-1 col-xs-4">
-                <div class="row">
-                    <div class="form-group">
-                        <label>Model</label>
-                        @Html.DropDownListFor(v => v.Vehicle.CarModel.CarModelId, Model.CarModelItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        <label>Body Style</label>
-                        @Html.DropDownListFor(v => v.Vehicle.BodyStyle.BodyStyleId, Model.BodyStyleItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        <label>Transmission</label>
-                        @Html.DropDownListFor(v => v.Vehicle.Transmission.TransmissionId, Model.TransmissionItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        <label>Interior Color</label>
-                        @Html.DropDownListFor(v => v.Vehicle.InteriorColor.InteriorColorId, Model.InteriorColorItems, "-Choose One-", new { @class = "form-control" })
-                    </div>
-                    <div class="form-group">
-                        <label>VIN #</label>
-                        @Html.TextBoxFor(v => v.Vehicle.Vin, new { @class = "form-control" })
-                    </div>
-                    <div>
-                        <label>Sale Price</label>
-                        @Html.TextBoxFor(v => v.Vehicle.SalePrice, new { @type = "number", @class = "form-control" })
+                <div class="col-xs-9">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-xs-12">Description</label>
+                            @Html.TextAreaFor(v => v.Vehicle.Description, new { @class = "col-xs-12", @style = "width:100%" })
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save Edit</button>
+                            @Html.ActionLink("Cancel Edit", "Vehicles", "Admin", null, new { @class = "btn btn-danger" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-9">
-                <div class="row">
-                    <div class="form-group">
-                        <label class="col-xs-12">Description</label>
-                        @Html.TextAreaFor(v => v.Vehicle.Description, new { @class = "col-xs-12", @style = "width:100%" })
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save Edit</button>
-                        @Html.ActionLink("Cancel Edit", "Vehicles", "Admin", null, new { @class = "btn btn-danger" })
-                    </div>
-                </div>
-            </div>
-        }
+            }
+        </div>
     </div>
-</div>
+@section scripts {
+<script src="~/Scripts/vehicles.js"></script>
+    }

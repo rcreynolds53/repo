@@ -1,0 +1,41 @@
+﻿@model CarDealership.Models.VehicleViewModel
+@{
+    Layout = null;
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.Vehicle.Year @Model.Vehicle.CarModel.CarMake.Manufacturer @Model.Vehicle.CarModel.CarModelName</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-3">
+                <p>Picture Goes here!</p>
+            </div>
+            <div class="col-xs-3">
+                <p>Body Style: @Model.Vehicle.BodyStyle.BodyStyleName</p>
+                <p>Trans: @Model.Vehicle.Transmission.TransmissionType</p>
+                <p>Color: @Model.Vehicle.ExteriorColor.ExteriorColorName</p>
+            </div>
+            <div class="col-xs-3">
+                <p>Interior Color: @Model.Vehicle.InteriorColor.InteriorColorName</p>
+                <p>Mileage: @Model.Vehicle.Mileage</p>
+                <p>VIN: @Model.Vehicle.Vin</p>
+            </div>
+            <div class="col-xs-3">
+                <p>Sale Price : $@Model.Vehicle.SalePrice</p>
+                <p>MSRP: $@Model.Vehicle.Msrp</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-offset-3">
+                <p>Description: $@Model.Vehicle.Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body col-xs-offset-9">
+        <button class="btn btn-danger contactButton form-control" @("onclick=contactAction(" + Model.Vehicle.VehicleId + ")")>Change Me</button>
+    </div>
+</div>

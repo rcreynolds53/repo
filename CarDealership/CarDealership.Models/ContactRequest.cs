@@ -17,7 +17,6 @@ namespace CarDealership.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime RequestTime { get; set; }
         public DateTime ResponseTime { get; set; }
-        //public string Vin { get; set; }
 
         public virtual Vehicle Vehicle { get; set; }
     }

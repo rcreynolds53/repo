@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+    <div class="row">
+        @foreach (var v in Model)
+        {
+            <div class="panel panel-default" @("id=vehicle"+ v.VehicleId) hidden>
+                <div class="panel-heading">
+                    <h3 class="panel-title">@v.Year @v.CarModel.CarMake.Manufacturer @v.CarModel.CarModelName</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-xs-3">
+                        <p>Picture Goes here!</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>Body Style: @v.BodyStyle.BodyStyleName</p>
+                        <p>Trans: @v.Transmission.TransmissionType</p>
+                        <p>Color: @v.ExteriorColor.ExteriorColorName</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>Interior Color: @v.InteriorColor.InteriorColorName</p>
+                        <p>Mileage: @v.Mileage</p>
+                        <p>VIN: @v.Vin</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>Sale Price : $@v.SalePrice</p>
+                        <p>MSRP: $@v.Msrp</p>
+                        <button class="btn btn-danger vehicleButton"  @("onclick=vehicleAction(" + v.VehicleId + ")")>Change Me</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

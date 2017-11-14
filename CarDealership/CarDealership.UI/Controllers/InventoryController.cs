@@ -14,8 +14,8 @@ namespace CarDealership.UI.Controllers
         [Route("Inventory/VehicleDetails/{id}")]
         public ActionResult VehicleDetails(int id)
         {
-            var vehicle = manager.GetVehicle(id);
-            return View(vehicle);
+            var vehicleVM = manager.ConvertVehicleToVM(id);
+            return View(vehicleVM);
         }
 
         public ActionResult NewVehicles()

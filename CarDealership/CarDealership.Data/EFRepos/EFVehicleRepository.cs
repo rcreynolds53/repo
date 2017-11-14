@@ -128,5 +128,146 @@ namespace CarDealership.Data.EFRepos
         {
             throw new NotImplementedException();
         }
+
+        public void AddSpecial(Promo special)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarModel> GetModelsByMake(int makeId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddContactRequest(ContactRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vehicle> GetVehiclesFromNewSearch(SearchViewModel search)
+        {
+            var vehicles = context.Vehicles.Where(v => v.VehicleType.VehicleTypeName.ToUpper() == "NEW"
+                                                    && v.IsForSale == true).ToList();
+
+            if (string.IsNullOrWhiteSpace(search.MakeModelYear))
+            {
+                vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                           v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                          v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+            }
+            if (search.MinPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+            }
+            if (search.MaxPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+            }
+            if (search.MinYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+            }
+            if (search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+            }
+            return vehicles;
+        }
+
+        public List<Vehicle> GetVehiclesFromUsedSearch(SearchViewModel search)
+        {
+            var vehicles = context.Vehicles.Where(v => v.VehicleType.VehicleTypeName.ToUpper() == "USED"
+                                                     && v.IsForSale == true).ToList();
+
+            if (string.IsNullOrWhiteSpace(search.MakeModelYear))
+            {
+                vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                           v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                          v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+            }
+            if (search.MinPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+            }
+            if (search.MaxPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+            }
+            if (search.MinYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+            }
+            if (search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+            }
+            return vehicles;
+        }
+
+        public List<Vehicle> GetAllVehiclesFromSearch(SearchViewModel search)
+        {
+            {
+                var vehicles = context.Vehicles.ToList();
+
+                if (string.IsNullOrWhiteSpace(search.MakeModelYear))
+                {
+                    vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                               v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                              v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+                }
+                if (search.MinPrice.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+                }
+                if (search.MaxPrice.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+                }
+                if (search.MinYear.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+                }
+                if (search.MaxYear.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+                }
+                return vehicles;
+            }
+        }
+
+        public List<Vehicle> GetAllVehiclesForSaleSearch(SearchViewModel search)
+        {
+            {
+                var vehicles = context.Vehicles.Where(v => v.IsForSale == true).ToList();
+
+                if (string.IsNullOrWhiteSpace(search.MakeModelYear))
+                {
+                    vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                               v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                              v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+                }
+                if (search.MinPrice.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+                }
+                if (search.MaxPrice.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+                }
+                if (search.MinYear.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+                }
+                if (search.MaxYear.HasValue)
+                {
+                    vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+                }
+                return vehicles;
+            }
+        }
     }
 }

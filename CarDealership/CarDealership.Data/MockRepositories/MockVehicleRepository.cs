@@ -11,18 +11,25 @@ namespace CarDealership.Data.Repositories
 {
     public class MockVehicleRepository : IVehicleRepository
     {
-         static List<Vehicle> _vehicles;
-         static List<ExteriorColor> _exColors;
-         static List<InteriorColor> _intColors;
-         static List<Transmission> _transmissions;
-         static List<BodyStyle> _bodyStyles;
-         static List<VehicleType> _types;
+        static List<Vehicle> _vehicles;
+        static List<ExteriorColor> _exColors;
+        static List<InteriorColor> _intColors;
+        static List<Transmission> _transmissions;
+        static List<BodyStyle> _bodyStyles;
+        static List<VehicleType> _types;
         static List<CarMake> _carMakes;
         static List<CarModel> _carModels;
         static List<Promo> _specials;
-
+        static List<PurchaseType> _purchaseTypes;
+        static List<ContactRequest> _requests;
         static MockVehicleRepository()
         {
+            _purchaseTypes = new List<PurchaseType>()
+            {
+                new PurchaseType{PurchaseTypeId =1, PurchaseTypeName = "Bank Finance"},
+                new PurchaseType{PurchaseTypeId =2, PurchaseTypeName = "Cash"},
+                new PurchaseType{PurchaseTypeId =3, PurchaseTypeName = "Dealer Finance"}
+            };
             _carMakes = new List<CarMake>()
             {
                 new CarMake{ CarMakeId =1, Manufacturer = "Ford" },
@@ -89,7 +96,8 @@ namespace CarDealership.Data.Repositories
                     SalePrice = 2200,
                     Description = "Rusty but trusty.",
                     IsFeatured = true,
-                },            
+                    IsForSale = true
+                },
                 new Vehicle {
                     VehicleId =2,
                     Vin = "22222222222222222",
@@ -105,6 +113,7 @@ namespace CarDealership.Data.Repositories
                     SalePrice = 5000,
                     Description = "Florida truck, no rust!",
                     IsFeatured = false,
+                    IsForSale = true
                 },
                 new Vehicle {
                     VehicleId = 3,
@@ -117,18 +126,23 @@ namespace CarDealership.Data.Repositories
                     InteriorColor = _intColors[2],
                     Transmission = _transmissions[0],
                     VehicleType =_types[0],
-                     Msrp = 50000,
+                    Msrp = 50000,
                     SalePrice = 45000,
                     Description = "Solid",
-                   IsFeatured = true,
+                    IsFeatured = true,
+                    IsForSale = true
                 }
 
+            };
+            _requests = new List<ContactRequest>()
+            {
+                new ContactRequest {ContactRequestId = 1, Name = "Bill Rilley", Email = "r@gmail.com", Vehicle = _vehicles[0], Phone = "111-222-3333", Message = "hi" }
             };
         }
 
         public void AddVehicle(Vehicle newVehicle)
         {
-            if(_vehicles.Any())
+            if (_vehicles.Any())
             {
                 newVehicle.VehicleId = _vehicles.Max(v => v.VehicleId) + 1;
             }
@@ -158,7 +172,7 @@ namespace CarDealership.Data.Repositories
         public void ConvertVehicleVmToVehicle(VehicleViewModel viewmodel)
         {
             Vehicle vehicle = new Vehicle();
-            if(viewmodel.Vehicle.VehicleId == 0)
+            if (viewmodel.Vehicle.VehicleId == 0)
             {
                 viewmodel.Vehicle.VehicleId = _vehicles.Max(v => v.VehicleId) + 1;
                 vehicle = viewmodel.Vehicle;
@@ -169,6 +183,7 @@ namespace CarDealership.Data.Repositories
                 vehicle.InteriorColor = _intColors.FirstOrDefault(c => c.InteriorColorId == viewmodel.Vehicle.InteriorColor.InteriorColorId);
                 vehicle.Transmission = _transmissions.FirstOrDefault(t => t.TransmissionId == viewmodel.Vehicle.Transmission.TransmissionId);
                 vehicle.VehicleType = _types.FirstOrDefault(t => t.VehicleTypeId == viewmodel.Vehicle.VehicleType.VehicleTypeId);
+                vehicle.IsForSale = true;
                 _vehicles.Add(vehicle);
             }
             else
@@ -177,14 +192,15 @@ namespace CarDealership.Data.Repositories
                 vehicle.VehicleId = viewmodel.Vehicle.VehicleId;
                 vehicle.CarModel = _carModels.FirstOrDefault(m => m.CarModelId == viewmodel.Vehicle.CarModel.CarModelId);
                 vehicle.BodyStyle = _bodyStyles.FirstOrDefault(b => b.BodyStyleId == viewmodel.Vehicle.BodyStyle.BodyStyleId);
-                vehicle.ExteriorColor = _exColors.FirstOrDefault(c=>c.ExteriorColorId == viewmodel.Vehicle.ExteriorColor.ExteriorColorId);
-                vehicle.InteriorColor =_intColors.FirstOrDefault(c=>c.InteriorColorId == viewmodel.Vehicle.InteriorColor.InteriorColorId);
-                vehicle.Transmission = _transmissions.FirstOrDefault(t=>t.TransmissionId == viewmodel.Vehicle.Transmission.TransmissionId);
-                vehicle.VehicleType = _types.FirstOrDefault(t=>t.VehicleTypeId == viewmodel.Vehicle.VehicleType.VehicleTypeId);
-                
+                vehicle.ExteriorColor = _exColors.FirstOrDefault(c => c.ExteriorColorId == viewmodel.Vehicle.ExteriorColor.ExteriorColorId);
+                vehicle.InteriorColor = _intColors.FirstOrDefault(c => c.InteriorColorId == viewmodel.Vehicle.InteriorColor.InteriorColorId);
+                vehicle.Transmission = _transmissions.FirstOrDefault(t => t.TransmissionId == viewmodel.Vehicle.Transmission.TransmissionId);
+                vehicle.VehicleType = _types.FirstOrDefault(t => t.VehicleTypeId == viewmodel.Vehicle.VehicleType.VehicleTypeId);
+                vehicle.IsForSale = true;
+
                 _vehicles.RemoveAll(v => v.VehicleId == viewmodel.Vehicle.VehicleId);
                 _vehicles.Add(vehicle);
-            }            
+            }
         }
 
         public void DeleteVehicle(int id)
@@ -262,7 +278,179 @@ namespace CarDealership.Data.Repositories
 
         public List<Vehicle> GetAllUsedVehicles()
         {
-            return _vehicles.Where(v => v.VehicleType.VehicleTypeId == 2).ToList(); 
+            return _vehicles.Where(v => v.VehicleType.VehicleTypeId == 2).ToList();
+        }
+
+        public void AddSpecial(Promo special)
+        {
+            if (_specials.Any())
+            {
+                special.PromoId = _specials.Max(s => s.PromoId) + 1;
+            }
+            else
+            {
+                special.PromoId = 1;
+            }
+            _specials.Add(special);
+        }
+
+        public List<CarModel> GetModelsByMake(int makeId)
+        {
+            return _carModels.Where(m => m.CarMake.CarMakeId == makeId).ToList();
+        }
+
+        public void AddContactRequest(ContactRequest request)
+        {
+            if (_requests.Any())
+            {
+                request.ContactRequestId = _requests.Max(c => c.ContactRequestId) + 1;
+            }
+            else
+            {
+                request.ContactRequestId = 1;
+            }
+
+            request.Vehicle = _vehicles.Single(v => v.Vin == request.Vehicle.Vin);
+            _requests.Add(request);
+        }
+
+        public List<Vehicle> GetVehiclesFromNewSearch(SearchViewModel search)
+        {
+            var vehicles = _vehicles.Where(v => v.VehicleType.VehicleTypeName.ToUpper() == "NEW"
+                                            && v.IsForSale == true).ToList();
+            if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.OrderByDescending(v => v.Msrp).Take(20).ToList();
+            }
+            if (!string.IsNullOrWhiteSpace(search.MakeModelYear))
+            {
+                vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                           v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                          v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+            }
+            if (search.MinPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+            }
+            if (search.MaxPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+            }
+            if (search.MinYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+            }
+            if (search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+            }
+            return vehicles;
+        }
+        public List<Vehicle> GetVehiclesFromUsedSearch(SearchViewModel search)
+        {
+            var vehicles = _vehicles.Where(v => v.VehicleType.VehicleTypeName.ToUpper() == "USED"
+                                           && v.IsForSale == true).ToList();
+            if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.OrderByDescending(v => v.Msrp).Take(20).ToList();
+            }
+            if (!string.IsNullOrWhiteSpace(search.MakeModelYear))
+            {
+                vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                           v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                          v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+            }
+            if (search.MinPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+            }
+            if (search.MaxPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+            }
+            if (search.MinYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+            }
+            if (search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+            }
+            return vehicles;
+        }
+
+        public List<Vehicle> GetAllVehiclesFromSearch(SearchViewModel search)
+        {
+            var vehicles = _vehicles.ToList();
+
+            if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.OrderByDescending(v => v.Msrp).Take(20).ToList();
+            }
+
+            if (!string.IsNullOrWhiteSpace(search.MakeModelYear))
+            {
+                vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                           v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                          v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+            }
+            if (search.MinPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+            }
+            if (search.MaxPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+            }
+            if (search.MinYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+            }
+            if (search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+            }
+            return vehicles;
+
+        }
+
+        public List<Vehicle> GetAllVehiclesForSaleSearch(SearchViewModel search)
+        {
+
+            var vehicles = _vehicles.Where(v => v.IsForSale == true).ToList();
+
+            if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.OrderByDescending(v => v.Msrp).Take(20).ToList();
+            }
+            if (!string.IsNullOrWhiteSpace(search.MakeModelYear))
+            {
+                vehicles = vehicles.Where(v => v.CarModel.CarMake.Manufacturer.Contains(search.MakeModelYear) ||
+                                                           v.CarModel.CarModelName.Contains(search.MakeModelYear) ||
+                                                          v.Year.ToString().Contains(search.MakeModelYear)).ToList();
+            }
+            if (search.MinPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp > search.MinPrice).ToList();
+            }
+            if (search.MaxPrice.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Msrp < search.MaxPrice).ToList();
+            }
+            if (search.MinYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year > search.MinYear).ToList();
+            }
+            if (search.MaxYear.HasValue)
+            {
+                vehicles = vehicles.Where(v => v.Year < search.MaxYear).ToList();
+
+            }
+            return vehicles;
+
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿@model CarDealership.Models.ContactRequest
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contact Us</h2>
+@Html.Partial("ContactPartialView")
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.vinHide').hide();
+            $('#vinInput').val('');
+        });
+    </script>
+    }
+

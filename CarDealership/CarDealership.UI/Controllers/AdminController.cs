@@ -24,7 +24,7 @@ namespace CarDealership.UI.Controllers
         {
             var vehicleVM = new VehicleViewModel();
             vehicleVM.SetCarMakeItems(manager.GetAllMakes());
-            vehicleVM.SetCarModelItems(manager.GetModels());
+            vehicleVM.SetCarModelItems(manager.GetAllCarModels());
             vehicleVM.SetVehicleTypeItems(manager.GetAllTypes());
             vehicleVM.SetBodyStyleItems(manager.GetAllStyles());
             vehicleVM.SetExColorItems(manager.GetAllExColors());
@@ -70,5 +70,35 @@ namespace CarDealership.UI.Controllers
             var model = manager.GetAllUsers();
             return View(model);
         }
+
+        public ActionResult Specials()
+        {
+            var specials = manager.GetAllSpecials();
+            return View(specials);
+        }
+        [HttpGet]
+        public ActionResult AddSpecial()
+        {
+            return View();
+        }
+
+        public ActionResult AddSpecial(Promo special)
+        {
+            manager.AddSpecial(special);
+            return View();
+        }
+
+        public JsonResult GetMakes()
+        {
+            return Json(manager.GetAllMakes().ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetModelsByMake(string makeId)
+        {
+            int id = Convert.ToInt32(makeId);
+            var carModels = manager.GetModelsByMake(id);
+            return Json(carModels);
+        }
+
     }
 }

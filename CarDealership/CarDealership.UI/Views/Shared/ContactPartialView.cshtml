@@ -1,0 +1,54 @@
+﻿@model CarDealership.Models.ContactRequest
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-5">
+            @using (Html.BeginForm())
+            {
+
+                @Vereyon.Web.FlashMessageHtmlHelper.RenderFlashMessages(Html)
+                <div class="form-group">
+                    <label>Name</label>
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                </div>
+                <div class="form-group vinHide">
+                    <label>Vehicle</label>
+                    @Html.TextBoxFor(m => m.Vehicle.Vin, new { @readonly = "readonly", @class = "vinInput" })
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            }
+        </div>
+        <div class="col-xs-7">
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.262754854713!2d-93.27401704927594!3d44.97897317360779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b332907d76198f%3A0x47305550cfd48180!2sThe+Software+Guild!5e0!3m2!1sen!2sus!4v1510598921842" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <address>
+                15 S 5th St #600<br />
+                Minneapolis, MN 554029<br />
+                <abbr title="Phone">Sales:</abbr>
+                111-555-1111<br />
+                <abbr title="Phone">Service:</abbr>
+                111-555-1112
+            </address>
+        </div>
+    </div>
+</div>
+
+

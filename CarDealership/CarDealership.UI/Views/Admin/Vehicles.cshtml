@@ -5,35 +5,18 @@
 
 }
 <h2>Vehicles</h2>
-<div class="col-xs-12">
-    <div class="row">
-        @foreach (var v in Model)
-        {
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">@v.Year @v.CarModel.CarMake.Manufacturer @v.CarModel.CarModelName</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="col-xs-3">
+@Html.Partial("SearchPartialView")
+<hr />
+@Html.Partial("VehicleResultsPartialView")
 
-                    </div>
-                    <div class="col-xs-3">
-                        <p>Body Style: @v.BodyStyle.BodyStyleName</p>
-                        <p>Trans: @v.Transmission.TransmissionType</p>
-                        <p>Color: @v.ExteriorColor.ExteriorColorName</p>
-                    </div>
-                    <div class="col-xs-3">
-                        <p>Interior Color: @v.InteriorColor.InteriorColorName</p>
-                        <p>Mileage: @v.Mileage</p>
-                        <p>VIN: @v.Vin</p>
-                    </div>
-                    <div class="col-xs-3">
-                        <p>Sale Price : $@v.SalePrice</p>
-                        <p>MSRP: $@v.Msrp</p>
-                        @Html.ActionLink("Edit Vehicle", "EditVehicle", "Admin", new { id = v.VehicleId }, new { @class = "btn btn-primary" })
-                    </div>
-                </div>
-            </div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.vehicleButton').text('Edit Vehicle');
+        });
+        function vehicleAction(vehicleId) {
+            location = "/Admin/EditVehicle/" + vehicleId;
         }
-    </div>
-</div>
+    </script>
+<script src="~/Scripts/searchAll.js"></script>
+    }

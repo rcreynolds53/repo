@@ -19,6 +19,7 @@ namespace CarDealership.Models
         public decimal SalePrice { get; set; }
         public string Description { get; set; }
         public bool IsFeatured { get; set; }
+        public bool IsForSale { get; set; }
         //public int TransmissionId { get; set; }
         //public int InteriorColorId { get; set; }
         //public int ExteriorColorId { get; set; }

@@ -23,7 +23,7 @@ namespace CarDealership.UI.Controllers
         {
             var vehicleVM = new VehicleViewModel();
             vehicleVM.SetCarMakeItems(manager.GetAllMakes());
-            vehicleVM.SetCarModelItems(manager.GetModels());
+            vehicleVM.SetCarModelItems(manager.GetAllCarModels());
             vehicleVM.SetVehicleTypeItems(manager.GetAllTypes());
             vehicleVM.SetBodyStyleItems(manager.GetAllStyles());
             vehicleVM.SetExColorItems(manager.GetAllExColors());

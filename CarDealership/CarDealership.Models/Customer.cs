@@ -16,7 +16,6 @@ namespace CarDealership.Models
         public string Street2 { get; set; }
         public int ZipCode { get; set; }
         public int Phone { get; set; }
-        public string StateAbbreviation { get; set; }
 
         public virtual State State { get; set; }
     }        

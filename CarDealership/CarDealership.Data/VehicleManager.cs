@@ -95,10 +95,10 @@ namespace CarDealership.Data
 
         // ************* Model Methods ***********
 
-        //public List<CarModel> GetModelsFromMake(int makeId)
-        //{
-        //    return _vehicleRepo.GetModelsByMake(makeId);
-        //}
+        public List<CarModel> GetModelsByMake(int makeId)
+        {
+            return _vehicleRepo.GetModelsByMake(makeId);
+        }
         public IEnumerable<CarModel> GetAllCarModels()
         {
             return _vehicleRepo.GetAllCarModels();
@@ -131,6 +131,32 @@ namespace CarDealership.Data
         public void EditUser(User updatedUser)
         {
             _userRepo.EditUser(updatedUser);
+        }
+
+        public void AddSpecial(Promo special)
+        {
+            _vehicleRepo.AddSpecial(special);
+        }
+
+        public void AddContactRequest(ContactRequest request)
+        {
+            _vehicleRepo.AddContactRequest(request);
+        }
+        public List<Vehicle> GetVehiclesFromNewSearch(SearchViewModel search)
+        {
+            return _vehicleRepo.GetVehiclesFromNewSearch(search);
+        }
+        public List<Vehicle> GetVehiclesFromUsedSearch(SearchViewModel search)
+        {
+            return _vehicleRepo.GetVehiclesFromUsedSearch(search);
+        }
+        public List<Vehicle> GetAllVehiclesFromSearch(SearchViewModel search)
+        {
+            return _vehicleRepo.GetAllVehiclesFromSearch(search);
+        }
+        public List<Vehicle> GetAllVehiclesForSaleSearch(SearchViewModel search)
+        {
+            return _vehicleRepo.GetAllVehiclesForSaleSearch(search);
         }
     }
 }

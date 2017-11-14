@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Role.cs" />
+    <Compile Include="SearchViewModel.cs" />
     <Compile Include="User.cs" />
     <Compile Include="BodyStyle.cs" />
     <Compile Include="CarMake.cs" />

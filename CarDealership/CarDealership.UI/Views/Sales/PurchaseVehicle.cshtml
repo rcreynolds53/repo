@@ -1,0 +1,16 @@
+﻿@model CarDealership.Models.VehicleViewModel
+@{
+    ViewBag.Title = "PurchaseVehicle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Purchase Vehicle</h2>
+@Html.Partial("VehicleDetailsPartialView")
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.contactButton').hide();
+        });
+    </script>
+    }

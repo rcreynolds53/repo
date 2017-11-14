@@ -29,5 +29,12 @@ namespace CarDealership.UI.Controllers
             var carModels = manager.GetAllCarModels();
             return View(carModels);
         }
+
+        [HttpGet]
+        public ActionResult PurchaseVehicle(int id)
+        {
+            var vehicleToSell = manager.GetVehicle(id);
+            return View(manager.ConvertVehicleToVM(vehicleToSell.VehicleId));
+        }
     }
 }

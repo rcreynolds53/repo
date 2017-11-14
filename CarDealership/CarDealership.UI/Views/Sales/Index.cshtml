@@ -6,4 +6,10 @@
 }
 
 <h2>Sales</h2>
+@Html.Partial("SearchPartialView")
+<hr />
+@Html.Partial("VehicleResultsPartialView")
 
+@section scripts {
+    <script src="~/Scripts/searchForSale.js"></script>
+    }

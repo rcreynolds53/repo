@@ -27,5 +27,13 @@ namespace CarDealership.Data.Interfaces
         List<Promo> GetAllSpecials();
         List<Vehicle> GetAllNewVehicles();
         List<Vehicle> GetAllUsedVehicles();
+        void AddSpecial(Promo special);
+        List<CarModel> GetModelsByMake(int makeId);
+        void AddContactRequest(ContactRequest request);
+        List<Vehicle> GetVehiclesFromNewSearch(SearchViewModel search);
+        List<Vehicle> GetVehiclesFromUsedSearch(SearchViewModel search);
+        List<Vehicle> GetAllVehiclesFromSearch(SearchViewModel search);
+        List<Vehicle> GetAllVehiclesForSaleSearch(SearchViewModel search);
+
     }
 }

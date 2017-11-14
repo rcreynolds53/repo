@@ -1,7 +1,20 @@
-﻿@model CarDealership.Models.Vehicle
+﻿@model CarDealership.Models.VehicleViewModel
 
 @{
     ViewBag.Title = "VehicleDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Vehicle Details</h2>
+@Html.Partial("VehicleDetailsPartialView")
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.contactButton').text('Contact Us');
+        });
+        function contactAction(vehicleId) {
+            location = "/Home/Contact/" + vehicleId;
+        }
+    </script>
+    }
