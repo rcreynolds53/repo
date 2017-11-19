@@ -1,5 +1,6 @@
 namespace CarDealership.Data.Migrations
 {
+    using CarDealership.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
@@ -21,21 +22,23 @@ namespace CarDealership.Data.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            var userMgr = new UserManager<IdentityUser>(new UserStore<IdentityUser>(context));
-            var roleMgr = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var userMgr = new UserManager<User>(new UserStore<User>(context));
+            var roleMgr = new RoleManager<Role>(new RoleStore<Role>(context));
 
             // have we loaded roles already?
             if (roleMgr.RoleExists("admin"))
                 return;
 
             // create the admin role
-            roleMgr.Create(new IdentityRole() { Name = "admin" });
+            roleMgr.Create(new Role() { Name = "admin" });
 
 
             // create the default user
-            var user = new IdentityUser()
+            var user = new User()
             {
-                UserName = "admin@reynoldsautos.com",                
+                UserName = "admin@reynoldsautos.com",
+                FirstName = "Rob",
+                LastName = "Reynolds",
                 Email = "admin@reynoldsautos.com"
             };
 
@@ -51,11 +54,13 @@ namespace CarDealership.Data.Migrations
             if (roleMgr.RoleExists("manager"))
                 return;
 
-            roleMgr.Create(new IdentityRole() { Name = "sales" });
+            roleMgr.Create(new Role() { Name = "sales" });
 
-            var lesserUser = new IdentityUser()
+            var lesserUser = new User()
             {
                 UserName = "sales@reynoldsauto.com",
+                FirstName = "John",
+                LastName = "Doe",
                 Email = "sales@reynoldsauto.com",
             };
 

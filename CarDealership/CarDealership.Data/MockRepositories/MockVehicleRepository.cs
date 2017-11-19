@@ -22,8 +22,19 @@ namespace CarDealership.Data.Repositories
         static List<Promo> _specials;
         static List<PurchaseType> _purchaseTypes;
         static List<ContactRequest> _requests;
+        static List<Invoice> _invoices;
+        static List<User> _users;
         static MockVehicleRepository()
         {
+            _users = new List<User>()
+            {
+                new User{ Id="1", FirstName = "John", LastName = "Doe", Email = "jd@car.com", RoleName = "Sales"},
+                new User{Id="2",FirstName = "Tommy", LastName = "Gunn", Email="tg@car.com", RoleName = "Admin"}
+            };
+            _invoices = new List<Invoice>()
+            {
+                
+            };
             _purchaseTypes = new List<PurchaseType>()
             {
                 new PurchaseType{PurchaseTypeId =1, PurchaseTypeName = "Bank Finance"},
@@ -32,17 +43,17 @@ namespace CarDealership.Data.Repositories
             };
             _carMakes = new List<CarMake>()
             {
-                new CarMake{ CarMakeId =1, Manufacturer = "Ford" },
-                new CarMake { CarMakeId=2, Manufacturer = "Chevy" },
-                new CarMake { CarMakeId = 3, Manufacturer = "Dodge"}
+                new CarMake{ CarMakeId =1, Manufacturer = "Ford",User = _users[0] },
+                new CarMake { CarMakeId=2, Manufacturer = "Chevy",User = _users[1] },
+                new CarMake { CarMakeId = 3, Manufacturer = "Dodge",User = _users[0]}
             };
 
             _carModels = new List<CarModel>()
             {
-                new CarModel { CarModelId = 1, CarModelName = "F250", DateAdded = DateTime.Parse("10/01/2017"), CarMake = _carMakes[0]},
-                new CarModel { CarModelId = 2, CarModelName = "Silverado 1500", DateAdded = DateTime.Parse("10/02/2017"),CarMake = _carMakes[1]},
-                new CarModel { CarModelId = 3, CarModelName = "Ram 1500", DateAdded = DateTime.Parse("10/03/2017"),CarMake = _carMakes[2]},
-                new CarModel { CarModelId = 4, CarModelName = "F150", DateAdded = DateTime.Parse("10/04/2017"),CarMake = _carMakes[0]}
+                new CarModel { CarModelId = 1, CarModelName = "F250", DateAdded = DateTime.Parse("10/01/2017"), CarMake = _carMakes[0], User = _users[0] },
+                new CarModel { CarModelId = 2, CarModelName = "Silverado 1500", DateAdded = DateTime.Parse("10/02/2017"),CarMake = _carMakes[1],User = _users[0]},
+                new CarModel { CarModelId = 3, CarModelName = "Ram 1500", DateAdded = DateTime.Parse("10/03/2017"),CarMake = _carMakes[2],User = _users[1]},
+                new CarModel { CarModelId = 4, CarModelName = "F150", DateAdded = DateTime.Parse("10/04/2017"),CarMake = _carMakes[0],User = _users[1]}
 
             };
             _specials = new List<Promo>()
@@ -96,7 +107,7 @@ namespace CarDealership.Data.Repositories
                     SalePrice = 2200,
                     Description = "Rusty but trusty.",
                     IsFeatured = true,
-                    IsForSale = true
+                    IsVehicleSold = false
                 },
                 new Vehicle {
                     VehicleId =2,
@@ -113,7 +124,7 @@ namespace CarDealership.Data.Repositories
                     SalePrice = 5000,
                     Description = "Florida truck, no rust!",
                     IsFeatured = false,
-                    IsForSale = true
+                    IsVehicleSold = false
                 },
                 new Vehicle {
                     VehicleId = 3,
@@ -130,7 +141,7 @@ namespace CarDealership.Data.Repositories
                     SalePrice = 45000,
                     Description = "Solid",
                     IsFeatured = true,
-                    IsForSale = true
+                    IsVehicleSold = false
                 }
 
             };
@@ -140,18 +151,18 @@ namespace CarDealership.Data.Repositories
             };
         }
 
-        public void AddVehicle(Vehicle newVehicle)
-        {
-            if (_vehicles.Any())
-            {
-                newVehicle.VehicleId = _vehicles.Max(v => v.VehicleId) + 1;
-            }
-            else
-            {
-                newVehicle.VehicleId = 1;
-            }
-            _vehicles.Add(newVehicle);
-        }
+        //public void AddVehicle(Vehicle newVehicle)
+        //{
+        //    if (_vehicles.Any())
+        //    {
+        //        newVehicle.VehicleId = _vehicles.Max(v => v.VehicleId) + 1;
+        //    }
+        //    else
+        //    {
+        //        newVehicle.VehicleId = 1;
+        //    }
+        //    _vehicles.Add(newVehicle);
+        //}
 
         public VehicleViewModel ConvertVehicleToVM(int id)
         {
@@ -168,9 +179,28 @@ namespace CarDealership.Data.Repositories
 
             return vehicleVM;
         }
+        public InvoiceViewModel ConvertVehicleToPurchase(int id)
+        {
+            var vehicle = _vehicles.FirstOrDefault(v => v.VehicleId == id);
+            var vehicleVM = new InvoiceViewModel();
+            vehicleVM.Vehicle = vehicle;
+            vehicleVM.SetPurchaseTypeItems(_purchaseTypes);
+            return vehicleVM;
+        }
+        public void ConvertPurchaseToInvoice(InvoiceViewModel invoiceVM)
+        {
+            Invoice invoiceToAdd = invoiceVM.Invoice;
+            invoiceToAdd.PurchaseType = _purchaseTypes.SingleOrDefault(p => p.PurchaseTypeId == invoiceVM.Invoice.PurchaseType.PurchaseTypeId);
+            Vehicle vehicletoUpdate = _vehicles.SingleOrDefault(v => v.VehicleId == invoiceVM.Vehicle.VehicleId);
+            vehicletoUpdate.IsVehicleSold = true;
+            _vehicles.RemoveAll(v => v.VehicleId == vehicletoUpdate.VehicleId);
+            _vehicles.Add(vehicletoUpdate);
+            _invoices.Add(invoiceToAdd);
+        }
 
         public void ConvertVehicleVmToVehicle(VehicleViewModel viewmodel)
         {
+            
             Vehicle vehicle = new Vehicle();
             if (viewmodel.Vehicle.VehicleId == 0)
             {
@@ -183,7 +213,7 @@ namespace CarDealership.Data.Repositories
                 vehicle.InteriorColor = _intColors.FirstOrDefault(c => c.InteriorColorId == viewmodel.Vehicle.InteriorColor.InteriorColorId);
                 vehicle.Transmission = _transmissions.FirstOrDefault(t => t.TransmissionId == viewmodel.Vehicle.Transmission.TransmissionId);
                 vehicle.VehicleType = _types.FirstOrDefault(t => t.VehicleTypeId == viewmodel.Vehicle.VehicleType.VehicleTypeId);
-                vehicle.IsForSale = true;
+                vehicle.IsVehicleSold = false;
                 _vehicles.Add(vehicle);
             }
             else
@@ -196,7 +226,7 @@ namespace CarDealership.Data.Repositories
                 vehicle.InteriorColor = _intColors.FirstOrDefault(c => c.InteriorColorId == viewmodel.Vehicle.InteriorColor.InteriorColorId);
                 vehicle.Transmission = _transmissions.FirstOrDefault(t => t.TransmissionId == viewmodel.Vehicle.Transmission.TransmissionId);
                 vehicle.VehicleType = _types.FirstOrDefault(t => t.VehicleTypeId == viewmodel.Vehicle.VehicleType.VehicleTypeId);
-                vehicle.IsForSale = true;
+                vehicle.IsVehicleSold = false;
 
                 _vehicles.RemoveAll(v => v.VehicleId == viewmodel.Vehicle.VehicleId);
                 _vehicles.Add(vehicle);
@@ -317,7 +347,7 @@ namespace CarDealership.Data.Repositories
         public List<Vehicle> GetVehiclesFromNewSearch(SearchViewModel search)
         {
             var vehicles = _vehicles.Where(v => v.VehicleType.VehicleTypeName.ToUpper() == "NEW"
-                                            && v.IsForSale == true).ToList();
+                                            && v.IsVehicleSold == false).ToList();
             if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
             {
                 vehicles = vehicles.OrderByDescending(v => v.Msrp).Take(20).ToList();
@@ -350,7 +380,7 @@ namespace CarDealership.Data.Repositories
         public List<Vehicle> GetVehiclesFromUsedSearch(SearchViewModel search)
         {
             var vehicles = _vehicles.Where(v => v.VehicleType.VehicleTypeName.ToUpper() == "USED"
-                                           && v.IsForSale == true).ToList();
+                                           && v.IsVehicleSold == false).ToList();
             if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
             {
                 vehicles = vehicles.OrderByDescending(v => v.Msrp).Take(20).ToList();
@@ -420,7 +450,7 @@ namespace CarDealership.Data.Repositories
         public List<Vehicle> GetAllVehiclesForSaleSearch(SearchViewModel search)
         {
 
-            var vehicles = _vehicles.Where(v => v.IsForSale == true).ToList();
+            var vehicles = _vehicles.Where(v => v.IsVehicleSold == false).ToList();
 
             if (string.IsNullOrWhiteSpace(search.MakeModelYear) && !search.MinPrice.HasValue && !search.MaxPrice.HasValue && !search.MinYear.HasValue && !search.MaxYear.HasValue)
             {
@@ -451,6 +481,63 @@ namespace CarDealership.Data.Repositories
             }
             return vehicles;
 
+        }
+
+        public IEnumerable<PurchaseType> GetAllPurchaseTypes()
+        {
+            return _purchaseTypes.ToList();
+        }
+
+        public void AddCarMake(CarMake newMake)
+        {
+            if(_carMakes.Any())
+            {
+                newMake.CarMakeId = _carMakes.Max(m => m.CarMakeId) + 1;
+            }
+            else
+            {
+                newMake.CarMakeId = 1;
+            }
+            _carMakes.Add(newMake);
+        }
+
+        public void AddCarModel(CarModel newModel)
+        {
+            if (_carModels.Any())
+            {
+                newModel.CarModelId = _carModels.Max(m => m.CarModelId) + 1;
+            }
+            else
+            {
+                newModel.CarModelId = 1;
+            }
+            _carModels.Add(newModel);
+        }
+
+        public void ConvertCarModelVMtoCarModel(CarModelViewModel newModel)
+        {
+            CarModel newCarModel = new CarModel();
+            newCarModel = newModel.CarModel;
+            newCarModel.CarMake = _carMakes.FirstOrDefault(m=>m.CarMakeId == newModel.CarModel.CarMake.CarMakeId);
+
+            newCarModel.CarModelId = _carModels.Max(m => m.CarModelId) + 1;
+            _carModels.Add(newCarModel);
+
+        }
+
+        public List<InventoryViewModel> InventoryReport()
+        {
+            throw new NotImplementedException();
+        }
+
+        //public List<UserSalesViewModel> SalesReport()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public List<UserSalesViewModel> SalesReport(SalesFilterModel filters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

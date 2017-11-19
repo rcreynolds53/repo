@@ -26,8 +26,7 @@ namespace CarDealership.Data
         public DbSet<Promo> Promos { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<PurchaseType> PurchaseTypes { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<State> States { get; set; }
         public DbSet<ContactRequest> ContactRequests { get; set; }
+        public DbSet<Role> IdentityRoles { get; set; }
     }
 }

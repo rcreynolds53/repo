@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CarDealership.Models.CarMake>
+@{
+    ViewBag.Title = "Makes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Makes</h2>
+<div class="row">
+    @Html.ActionLink("Add Make", "AddMake", "Admin", null, new { @class = "btn btn-danager col-xs-2" })
+</div>
+<table class="table table-striped col-xs-9">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Date Added</th>
+            <th>User</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var m in Model)
+    {
+        <tr>
+            <td>@m.Manufacturer</td>
+            <td>@m.DateAdded</td>
+            <td>@m.User.UserName</td>
+        </tr>
+    }
+        </tbody>
+</table>
+
+

@@ -34,6 +34,10 @@
                         @Html.LabelFor(v => v.Vehicle.Msrp)
                         @Html.TextBoxFor(v => v.Vehicle.Msrp, new { @type = "number", @class = "form-control" })
                     </div>
+                    <div class="form-group">
+                        @Html.CheckBoxFor(v => v.Vehicle.IsVehicleSold)
+                        @Html.LabelFor(m => m.Vehicle.IsVehicleSold, new { @style = "font-weight:bold" })
+                    </div>
                 </div>
             @*<div class="col-xs-offset-1 col-xs-4">
                 <div class="row">

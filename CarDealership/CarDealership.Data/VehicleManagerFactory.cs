@@ -1,4 +1,5 @@
-﻿using CarDealership.Data.Interfaces;
+﻿using CarDealership.Data.EFRepos;
+using CarDealership.Data.Interfaces;
 using CarDealership.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace CarDealership.Data
             {
                 case "Mock":
                     return new VehicleManager(new MockVehicleRepository(), new MockUserRepository());
+                case "EF":
+                    return new VehicleManager(new EFVehicleRepository(), new EFUserRepository());
                 default:
                     throw new Exception("Mode value in app config is not valid.");
             }

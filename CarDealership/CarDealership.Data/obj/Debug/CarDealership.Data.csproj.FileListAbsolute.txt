@@ -108,3 +108,12 @@
 \\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\bin\Debug\System.Web.WebPages.Razor.xml
 \\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\bin\Debug\System.Web.WebPages.xml
 \\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.StatesGone.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.CustomersGone.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.Testing.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.Updated.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.UserNameOnMake.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.ComputeDate.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.UserandRoleUpdate.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.ComputedPurchase.resources
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.Data\obj\Debug\CarDealership.Data.Migrations.ReportsFix.resources

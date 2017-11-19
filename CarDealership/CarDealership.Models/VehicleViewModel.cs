@@ -10,7 +10,6 @@ namespace CarDealership.Models
     public class VehicleViewModel
     {
         public Vehicle Vehicle { get; set; }
-        public Customer Customer { get; set; }
         public List<SelectListItem> CarMakeItems { get; set; }
         public List<SelectListItem> CarModelItems { get; set; }
         public List<SelectListItem> TransmissionItems { get; set; }
@@ -18,7 +17,7 @@ namespace CarDealership.Models
         public List<SelectListItem> ExteriorColorItems { get; set; }
         public List<SelectListItem> BodyStyleItems { get; set; }
         public List<SelectListItem> VehicleTypeItems { get; set; }
-        public List<SelectListItem> PurchaseTypeItems { get; set; }
+
         public VehicleViewModel()
         {
             CarMakeItems = new List<SelectListItem>();
@@ -29,11 +28,12 @@ namespace CarDealership.Models
             BodyStyleItems = new List<SelectListItem>();
             VehicleTypeItems = new List<SelectListItem>();
             Vehicle = new Vehicle();
+
         }
 
         public void SetCarMakeItems(IEnumerable<CarMake> makes)
         {
-            foreach(var m in makes)
+            foreach (var m in makes)
             {
                 CarMakeItems.Add(new SelectListItem()
                 {
@@ -45,7 +45,7 @@ namespace CarDealership.Models
 
         public void SetCarModelItems(IEnumerable<CarModel> models)
         {
-           foreach(var m in models)
+            foreach (var m in models)
             {
                 CarModelItems.Add(new SelectListItem()
                 {
@@ -113,18 +113,6 @@ namespace CarDealership.Models
                     Text = t.VehicleTypeName
                 });
             }
-        }
-
-        public void SetPurchaseTypeItems(IEnumerable<PurchaseType> types)
-        {
-            foreach(var t in types)
-            {
-                PurchaseTypeItems.Add(new SelectListItem()
-                {
-                    Value = t.PurchaseTypeId.ToString(),
-                    Text = t.PurchaseTypeName
-                });
-            }
-        }
+        }       
     }
 }

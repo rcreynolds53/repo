@@ -1,0 +1,58 @@
+﻿@model CarDealership.Models.SalesFilterModel
+
+@{
+    ViewBag.Title = "SalesReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sales Report</h2>
+<div class="row" style="border: 1px solid black">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-xs-4">
+                <label>User</label>
+            </div>
+            <div class="col-xs-4">
+                <label>From Date</label>
+            </div>
+            <div class="col-xs-4">
+                <label>To Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                @Html.DropDownListFor(u => u.User.Id, Model.UserItems, "-All-", new { @class = "form-control", @id = "selectUser" })
+            </div>
+            <div class="col-xs-4">
+                @Html.TextBoxFor(i => i.FromDate, new { @class = "form-control", @type = "date" })
+            </div>
+            <div class="col-xs-4">
+                @Html.TextBoxFor(i => i.ToDate, new { @class = "form-control", @type = "date" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <button type="button" id="filterSearchButton" class="btn btn-danger">Search</button>
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <div class="col-xs-10">
+        <table class="table table-striped" id="salesReportTable" hidden>
+            <thead>
+                <tr>
+                    <th class="col-xs-3">User</th>
+                    <th class="col-xs-3">Total Sales</th>
+                    <th class="col-xs-3">Total Vehicles</th>
+                </tr>
+            </thead>
+            <tbody id="userSales"></tbody>
+        </table>
+    </div>
+</div>
+@section scripts {
+    <script src="~/Scripts/userSaleReport.js"></script>
+    }
+

@@ -1,0 +1,65 @@
+﻿@model List<CarDealership.Models.InventoryViewModel>
+
+@{
+    ViewBag.Title = "InventoryReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inventory Report</h2>
+
+<h3>New Vehicles</h3>
+<div class="row">
+    <div class="col-xs-10">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-xs-2">Year</th>
+                    <th class="col-xs-2">Make</th>
+                    <th class="col-xs-2">Model</th>
+                    <th class="col-xs-2">Count</th>
+                    <th class="col-xs-2">Stock Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model.Where(i => i.Vehicle.VehicleType.VehicleTypeId == 1).OrderByDescending(i=>i.Year))
+            {
+                    <tr>
+                        <td class="col-xs-2">@i.Year</td>
+                        <td class="col-xs-2">@i.CarModel.CarMake.Manufacturer</td>
+                        <td class="col-xs-2">@i.CarModel.CarModelName</td>
+                        <td class="col-xs-2">@i.Count</td>
+                        <td class="col-xs-2">$@i.StockValue</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<h3>Used Vehicles</h3>
+<div class="row">
+    <div class="col-xs-10">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-xs-2">Year</th>
+                    <th class="col-xs-2">Make</th>
+                    <th class="col-xs-2">Model</th>
+                    <th class="col-xs-2">Count</th>
+                    <th class="col-xs-2">Stock Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model.Where(i => i.Vehicle.VehicleType.VehicleTypeId == 2).OrderByDescending(i => i.Year))
+                {
+                    <tr>
+                        <td class="col-xs-2">@i.Year</td>
+                        <td class="col-xs-2">@i.CarModel.CarMake.Manufacturer</td>
+                        <td class="col-xs-2">@i.CarModel.CarModelName</td>
+                        <td class="col-xs-2">@i.Count</td>
+                        <td class="col-xs-2">$@i.StockValue</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

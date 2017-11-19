@@ -151,3 +151,5 @@
 \\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.UI\bin\Microsoft.AI.WindowsServer.xml
 \\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.UI\bin\Microsoft.AI.Web.xml
 \\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.UI\bin\Vereyon.Web.FlashMessage.dll
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+\\Mac\Home\Documents\SG-Bootcamp\RobReynoldsRepo\repo\CarDealership\CarDealership.UI\bin\Microsoft.Owin.Host.SystemWeb.xml

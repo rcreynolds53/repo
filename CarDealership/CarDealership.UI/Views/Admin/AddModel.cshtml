@@ -1,0 +1,28 @@
+﻿@model CarDealership.Models.CarModelViewModel
+
+@{
+    ViewBag.Title = "AddModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Model</h2>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-xs-5 form-group">
+            <label>New Model</label>
+            @Html.TextBoxFor(m=>m.CarModel.CarModelName, new {@class="form-control" })
+        </div>
+        <div class="col-xs-5">
+            <label>Make</label>
+            @Html.DropDownListFor(m=>m.CarModel.CarMake.CarMakeId, Model.CarMakeItems, new {@class = "form-control" })
+        </div>
+        <div class="col-xs-1">
+            <button type="submit" class="btn btn-danger form-control">Save</button>
+        </div>
+        <div class="col-xs-1 form-group">
+            @Html.ActionLink("Cancel", "Models", "Admin", null, new { @class = "btn btn-warning" })
+        </div> 
+    </div>
+}
+

@@ -10,9 +10,9 @@ namespace CarDealership.Data.Interfaces
    public interface IVehicleRepository
     {
         List<Vehicle> GetAllVehicles();
-        void AddVehicle(Vehicle newVehicle);
-        void DeleteVehicle(int id);
-        void UpdateVehicle(Vehicle updatedVehicle);
+        //void AddVehicle(Vehicle newVehicle);
+        //void DeleteVehicle(int id);
+        //void UpdateVehicle(Vehicle updatedVehicle);
         Vehicle GetVehicle(int id);
         void ConvertVehicleVmToVehicle(VehicleViewModel viewmodel);
         VehicleViewModel ConvertVehicleToVM(int id);
@@ -23,6 +23,7 @@ namespace CarDealership.Data.Interfaces
         IEnumerable<Transmission> GetAllTransmissions();
         IEnumerable<CarModel> GetAllCarModels();
         IEnumerable<CarMake> GetAllCarMakes();
+        IEnumerable<PurchaseType> GetAllPurchaseTypes();
         List<Vehicle> GetFeaturedVehicles();
         List<Promo> GetAllSpecials();
         List<Vehicle> GetAllNewVehicles();
@@ -34,6 +35,12 @@ namespace CarDealership.Data.Interfaces
         List<Vehicle> GetVehiclesFromUsedSearch(SearchViewModel search);
         List<Vehicle> GetAllVehiclesFromSearch(SearchViewModel search);
         List<Vehicle> GetAllVehiclesForSaleSearch(SearchViewModel search);
-
+        void AddCarMake(CarMake newMake);
+        InvoiceViewModel ConvertVehicleToPurchase(int id);
+        //void AddCarModel(CarModel newModel);
+        void ConvertPurchaseToInvoice(InvoiceViewModel invoiceVM);
+        void ConvertCarModelVMtoCarModel(CarModelViewModel newModel);
+        List<InventoryViewModel> InventoryReport();
+        List<UserSalesViewModel> SalesReport(SalesFilterModel filters);
     }
 }

@@ -1,0 +1,25 @@
+﻿@model CarDealership.Models.CarMake
+
+@{
+    ViewBag.Title = "AddMake";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Make</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row" style="border:solid">
+        <div class="col-xs-5 form-group">
+            <label>New Make</label>
+            @Html.TextBoxFor(m=>m.Manufacturer, new { @class ="form-control"})
+        </div>
+        <div class="col-xs-1">
+            <button type="submit" class="btn btn-danger form-control">Save</button>
+            </div>
+        <div class="col-xs-1">
+            @Html.ActionLink("Cancel", "Makes", "Admin", null, new { @class = "btn btn-warning form-control" })
+        </div> 
+    </div>
+}
+

@@ -71,6 +71,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -118,6 +119,42 @@
     <Compile Include="Migrations\201711081246347_UpdateTables.Designer.cs">
       <DependentUpon>201711081246347_UpdateTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711151616307_StatesGone.cs" />
+    <Compile Include="Migrations\201711151616307_StatesGone.Designer.cs">
+      <DependentUpon>201711151616307_StatesGone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711151619142_CustomersGone.cs" />
+    <Compile Include="Migrations\201711151619142_CustomersGone.Designer.cs">
+      <DependentUpon>201711151619142_CustomersGone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171310456_Testing.cs" />
+    <Compile Include="Migrations\201711171310456_Testing.Designer.cs">
+      <DependentUpon>201711171310456_Testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171322352_Updated.cs" />
+    <Compile Include="Migrations\201711171322352_Updated.Designer.cs">
+      <DependentUpon>201711171322352_Updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171947588_UserNameOnMake.cs" />
+    <Compile Include="Migrations\201711171947588_UserNameOnMake.Designer.cs">
+      <DependentUpon>201711171947588_UserNameOnMake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711171957160_ComputeDate.cs" />
+    <Compile Include="Migrations\201711171957160_ComputeDate.Designer.cs">
+      <DependentUpon>201711171957160_ComputeDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711181556142_UserandRoleUpdate.cs" />
+    <Compile Include="Migrations\201711181556142_UserandRoleUpdate.Designer.cs">
+      <DependentUpon>201711181556142_UserandRoleUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711191856392_ComputedPurchase.cs" />
+    <Compile Include="Migrations\201711191856392_ComputedPurchase.Designer.cs">
+      <DependentUpon>201711191856392_ComputedPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711192011116_ReportsFix.cs" />
+    <Compile Include="Migrations\201711192011116_ReportsFix.Designer.cs">
+      <DependentUpon>201711192011116_ReportsFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Interfaces\IBodyStyleRepository.cs" />
     <Compile Include="MockRepositories\MockBodyStyleRepository.cs" />
@@ -157,6 +194,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711081246347_UpdateTables.resx">
       <DependentUpon>201711081246347_UpdateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711151616307_StatesGone.resx">
+      <DependentUpon>201711151616307_StatesGone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711151619142_CustomersGone.resx">
+      <DependentUpon>201711151619142_CustomersGone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171310456_Testing.resx">
+      <DependentUpon>201711171310456_Testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171322352_Updated.resx">
+      <DependentUpon>201711171322352_Updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171947588_UserNameOnMake.resx">
+      <DependentUpon>201711171947588_UserNameOnMake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711171957160_ComputeDate.resx">
+      <DependentUpon>201711171957160_ComputeDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711181556142_UserandRoleUpdate.resx">
+      <DependentUpon>201711181556142_UserandRoleUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711191856392_ComputedPurchase.resx">
+      <DependentUpon>201711191856392_ComputedPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711192011116_ReportsFix.resx">
+      <DependentUpon>201711192011116_ReportsFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

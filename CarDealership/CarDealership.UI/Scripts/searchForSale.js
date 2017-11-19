@@ -18,6 +18,7 @@ function vehicleAction(vehicleId) {
 }
 
 $('#searchButton').on('click', function (e) {
+    $('.panel.panel-default').hide();
     e.preventDefault();
     var makeModelYear = $('#makeModelYear').val();
     var minPrice = $('#minPrice option:selected').val();

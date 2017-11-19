@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+
 
 namespace CarDealership.UI.Controllers
 {
-    //[Authorize(Roles ="admin")]
+    [Authorize(Roles ="admin")]
     public class AdminController : Controller
     {
         VehicleManager manager = VehicleManagerFactory.Create();
@@ -71,6 +73,49 @@ namespace CarDealership.UI.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public ActionResult AddUser()
+        {
+            var userVM = new UserViewModel();
+            userVM.SetRoleItems(manager.GetAllRoles());
+            return View(userVM);
+        }
+
+        [HttpPost]
+        public ActionResult AddUser(UserViewModel userVM)
+        {
+            manager.ConvertUserVMtoUserAdd(userVM);
+            return RedirectToAction("Users");
+        }
+
+        [HttpGet]
+        public ActionResult EditUser(string id)
+        {
+            var userToEdit = manager.GetUser(id);
+            return View(manager.ConvertUserToVM(userToEdit));
+            
+        }
+
+        [HttpPost]
+        public ActionResult EditUser(UserViewModel userVM)
+        {
+            manager.ConvertUserVMtoUserEdit(userVM);
+            return RedirectToAction("Users");
+        }
+        [HttpGet]
+        public ActionResult DeleteUser(string id)
+        {
+            var user = manager.GetUser(id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteUser(User user)
+        {
+            manager.DisableUser(user.Id);
+            return RedirectToAction("Users");
+        }
+
         public ActionResult Specials()
         {
             var specials = manager.GetAllSpecials();
@@ -87,11 +132,51 @@ namespace CarDealership.UI.Controllers
             manager.AddSpecial(special);
             return View();
         }
-
-        public JsonResult GetMakes()
+        [HttpGet]
+        public ActionResult Makes()
         {
-            return Json(manager.GetAllMakes().ToList(), JsonRequestBehavior.AllowGet);
+            return View(manager.GetAllMakes());
         }
+
+        [HttpGet]
+        public ActionResult AddMake()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddMake(CarMake newMake)
+        {
+            newMake.UserName = User.Identity.GetUserName(); 
+            manager.AddCarMake(newMake);
+            return RedirectToAction("Makes");
+        }
+        [HttpGet]
+        public ActionResult Models()
+        {
+            return View(manager.GetAllCarModels());
+        }
+
+        [HttpGet]
+        public ActionResult AddModel()
+        {
+            var carmodelVM = new CarModelViewModel();
+            carmodelVM.SetCarMakeItems(manager.GetAllMakes());
+            return View(carmodelVM);
+        }
+
+        [HttpPost]
+        public ActionResult AddModel(CarModelViewModel newModel)
+        {
+            newModel.UserName = User.Identity.GetUserName();
+            manager.ConvertCarModelVMtoCarModel(newModel);
+            return RedirectToAction("Models");
+        }
+
+        //public JsonResult GetMakes()
+        //{
+        //    return Json(manager.GetAllMakes().ToList(), JsonRequestBehavior.AllowGet);
+        //}
 
         public JsonResult GetModelsByMake(string makeId)
         {

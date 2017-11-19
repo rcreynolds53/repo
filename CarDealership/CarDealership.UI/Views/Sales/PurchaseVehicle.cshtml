@@ -1,4 +1,4 @@
-﻿@model CarDealership.Models.VehicleViewModel
+﻿@model CarDealership.Models.InvoiceViewModel
 @{
     ViewBag.Title = "PurchaseVehicle";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,6 +6,69 @@
 
 <h2>Purchase Vehicle</h2>
 @Html.Partial("VehicleDetailsPartialView")
+<h2>Sales Information</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(v=>v.Vehicle.VehicleId)
+    <div class="row">
+        <div class="col-xs-4 form-group">
+            <label>Name</label>
+            @Html.TextBoxFor(v => v.Invoice.Name, new { @class = "form-control" })
+        </div>
+        <div class="col-xs-offset-1 col-xs-4 form-group">
+            <label>Phone</label>
+            @Html.TextBoxFor(v => v.Invoice.Phone, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 form-group">
+            <label>Email</label>
+            @Html.TextBoxFor(v=>v.Invoice.Email, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 form-group">
+            <label>Street 1</label>
+            @Html.TextBoxFor(v=>v.Invoice.Street1, new { @class = "form-control" })
+        </div>
+        <div class="col-xs-offset-1 col-xs-4 form-group">
+            <label>Street 2</label>
+            @Html.TextBoxFor(v=>v.Invoice.Street2, new { @class = "form-control" })
+        </div>
+    </div>
+        <div class="row">
+            <div class=" col-xs-4 form-group">
+                <label>City</label>
+                @Html.TextBoxFor(v => v.Invoice.City, new { @class = "form-control" })
+            </div>
+            <div class="col-xs-offset-1 col-xs-4 form-group">
+                <label>State</label>
+                @Html.DropDownListFor(v => v.Invoice.StateAb, CarDealership.Models.State.GetStatesList(), new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 form-group">
+                <label>Zip Code</label>
+                @Html.TextBoxFor(v=>v.Invoice.ZipCode, new { @class = "form-control"})
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-4 form-group">
+                <label>Purchase Price</label>
+                @Html.TextBoxFor(v=>v.Invoice.PurchasePrice, new { @class = "form-control"})
+            </div>
+            <div class="col-xs-offset-1 col-xs-4 form-group">
+                <label>Purchase Type</label>
+                @Html.DropDownListFor(v=>v.Invoice.PurchaseType.PurchaseTypeId, Model.PurchaseTypeItems, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <button type="submit" class="btn btn-primary">Confirm Purchase</button>
+            </div>
+        </div>
+}
 
 @section scripts {
     <script>
@@ -13,4 +76,4 @@
             $('.contactButton').hide();
         });
     </script>
-    }
+}

@@ -13,8 +13,7 @@ namespace CarDealership.Models
         public string CarModelName { get; set; }
         //public int CarMakeId { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime DateAdded { get; set; }
-        //public string UserId { get; set; }
+        public DateTime? DateAdded { get; set; }
 
         public virtual CarMake CarMake { get; set; }
         public virtual User User { get; set; }

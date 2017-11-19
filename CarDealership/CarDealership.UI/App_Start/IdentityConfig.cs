@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CarDealership.Data;
+using CarDealership.Models;
 
 namespace CarDealership.UI.App_Start
 {
@@ -25,9 +26,9 @@ namespace CarDealership.UI.App_Start
 
 
             app.CreatePerOwinContext(() => new CarDealershipDbContext());
-            app.CreatePerOwinContext<UserManager<IdentityUser>>((options, context) => new UserManager<IdentityUser>(new UserStore<IdentityUser>(context.Get<CarDealershipDbContext>())));
+            app.CreatePerOwinContext<UserManager<User>>((options, context) => new UserManager<User>(new UserStore<User>(context.Get<CarDealershipDbContext>())));
             app.CreatePerOwinContext(() => new CarDealershipDbContext());
-            app.CreatePerOwinContext<RoleManager<IdentityRole>>((options, context) => new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context.Get<CarDealershipDbContext>())));
+            app.CreatePerOwinContext<RoleManager<Role>>((options, context) => new RoleManager<Role>(new RoleStore<Role>(context.Get<CarDealershipDbContext>())));
         }
     }
 }
